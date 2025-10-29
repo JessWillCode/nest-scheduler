@@ -1,0 +1,15 @@
+{
+  "name": "scheduler-app",
+  "private": true,
+  "workspaces": ["api", "client"],
+  "scripts": {
+  "dev:api": "npm --workspace api run start:dev",
+  "dev:client": "npm --workspace client run dev",
+  "dev": "concurrently \"npm run dev:api\" \"npm run dev:client\"",
+  "db:up": "docker compose up -d",
+  "db:down": "docker compose down -v"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
